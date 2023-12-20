@@ -15,6 +15,6 @@ jobs:
       - name: Linting Project
         run: npm run lint
       - name: Testing Project
-        run: npm testworkflow
+        run: npm test
       - name: Deploying Project
         run: echo "Project Deployed!!!"
