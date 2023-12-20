@@ -4,7 +4,17 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: step1
-        run: echo "This is a first step of workflow"
-      - name: step2
-        run: echo "This is a second step of workflow"    
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+            node-version: latest
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Linting Project
+        run: npm run lint
+      - name: Testing Project
+        run: npm testworkflow
+      - name: Deploying Project
+        run: echo "Project Deployed!!!"
